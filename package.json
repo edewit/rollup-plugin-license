@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-license-xml",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Generates a xml with the licenses of your runtime dependencies",
   "engines": {
     "node": ">=8.0.0"
@@ -42,7 +42,6 @@
   },
   "homepage": "https://github.com/edewit/rollup-plugin-license/",
   "devDependencies": {
-    "handlebars": "^4.7.6",
     "husky": "^4.2.3",
     "mvt": "4.1.0",
     "rollup": "npm:rollup@^2.10.4",
@@ -50,5 +49,7 @@
     "rollup60": "npm:rollup@0.60.x",
     "standard": "^14.3.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "handlebars": "^4.7.6"
+  }
 }
