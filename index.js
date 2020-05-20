@@ -87,25 +87,25 @@ const plugin = (opts = {}) => {
   };
 
   return {
-    name: 'rollup-plugin-license',
+    name: 'rollup-plugin-license-xml',
     buildStart: function () {
       const ctx = this || {};
       if (!ctx.meta || +(ctx.meta.rollupVersion || 0).charAt(0) < 1) {
-        console.error('rollup-plugin-license: Rollup version not supported\n');
+        console.error('rollup-plugin-license-xml: Rollup version not supported\n');
       }
     },
-    generateBundle: function (outOpts, bundle, isWrite) {
+    generateBundle: function (_outOpts, bundle) {
       const ctx = this || {};
       if (!ctx.meta || +(ctx.meta.rollupVersion || 0).charAt(0) < 1) return null
       const getDeps = (id) => {
         return ctx.getModuleInfo ? ctx.getModuleInfo(id).importedIds : []
       };
 
-      return new Promise((resolve, reject) => {
+      return new Promise((resolve) => {
         resolve();
 
         const modules = [];
-        Object.entries(bundle).forEach(([outId, { modules: bundleMods }]) => {
+        Object.entries(bundle).forEach(([_outId, { modules: bundleMods }]) => {
           bundleMods = bundleMods || {};
           Object.entries(bundleMods).forEach(([id, moduleInfo]) => {
             const dependencies = getDeps(id);

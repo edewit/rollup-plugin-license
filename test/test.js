@@ -77,7 +77,7 @@ test('rollup < 1.0.0 prints warning about support', async (assert) => {
   const rollOpts = Object.assign({ plugins: [plugin()] }, baseOpts)
   const bundle = await rollup60(rollOpts)
   await bundle.generate({ format: 'cjs' })
-  const expect = 'rollup-plugin-license: Rollup version not supported'
+  const expect = 'rollup-plugin-license-xml: Rollup version not supported'
   assert.is(results.split('\n')[0], expect)
   console.error = oldCslErr
 })

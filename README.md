@@ -1,13 +1,13 @@
-# rollup-plugin-license [![NPM version](https://badge.fury.io/js/rollup-plugin-license.svg)](https://npmjs.org/package/rollup-plugin-license)
+# rollup-plugin-license-xml [![NPM version](https://badge.fury.io/js/rollup-plugin-license-xml.svg)](https://npmjs.org/package/rollup-plugin-license-xml)
 
-## rollup-plugin-license
+## rollup-plugin-license-xml
 
 Creates a license.xml file from all your dependencies see [template](template.handlebars)
 
 ## Install
 
 ```sh
-$ npm install --save-dev rollup-plugin-license
+$ npm install --save-dev rollup-plugin-license-xml
 ```
 
 ## Usage
@@ -16,12 +16,12 @@ $ npm install --save-dev rollup-plugin-license
 
 #### Import as ES Module
 ```js
-import license from 'rollup-plugin-license'
+import license from 'rollup-plugin-license-xml'
 ```
 
 #### Requiring as CJS
 ```js
-const license = require('rollup-plugin-license')
+const license = require('rollup-plugin-license-xml')
 ```
 
 ### Usage from rollup config
@@ -46,7 +46,7 @@ rollup({
 logged to console on rollup completion
 ```xml
 <other>
-    <description>rollup-plugin-license</description>
+    <description>rollup-plugin-license-xml</description>
     <locations>
         <file>/test/_fixtures/bundle-a.js</file>
     </locations>

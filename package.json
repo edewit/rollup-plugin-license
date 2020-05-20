@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-license",
+  "name": "rollup-plugin-license-xml",
   "version": "0.0.1",
   "description": "Generates a xml with the licenses of your runtime dependencies",
   "engines": {
