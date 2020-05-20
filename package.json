@@ -1,0 +1,54 @@
+{
+  "name": "rollup-plugin-license",
+  "version": "0.0.1",
+  "description": "Generates a xml with the licenses of your runtime dependencies",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "main": "index.js",
+  "module": "module.js",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "module.js"
+  ],
+  "scripts": {
+    "build": "standard module.js && node ./node_modules/rollup/dist/bin/rollup -c",
+    "test": "yarn run build && node test/test.js --verbose",
+    "debug": "node --nolazy --inspect-brk=9229 test/test.js --verbose"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run build && node test/test.js && git add index.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edewit/rollup-plugin-license.git"
+  },
+  "keywords": [
+    "rollup",
+    "plugin",
+    "config",
+    "import",
+    "bundle",
+    "analysis",
+    "license"
+  ],
+  "author": "Erik Jan de Wit (https://github.com/edewit)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edewit/rollup-plugin-license/issues"
+  },
+  "homepage": "https://github.com/edewit/rollup-plugin-license/",
+  "devDependencies": {
+    "handlebars": "^4.7.6",
+    "husky": "^4.2.3",
+    "mvt": "4.1.0",
+    "rollup": "npm:rollup@^2.10.4",
+    "rollup100": "npm:rollup@1.0.x",
+    "rollup60": "npm:rollup@0.60.x",
+    "standard": "^14.3.3"
+  },
+  "dependencies": {}
+}
