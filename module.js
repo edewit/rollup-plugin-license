@@ -45,28 +45,7 @@ const license = (bundle, opts = {}) => {
     }
   })
 
-  const templateString = `
-  {{#each modules}}
-  <other>
-      <description>{{this.packageJson.name}}</description>
-      <locations>
-      {{#each files}}
-          {{#if ../truncated}}
-          <directory>{{this}}</directory>
-          {{else}}
-          <file>{{this}}</file>
-          {{/if}}
-      {{/each}}
-      </locations>
-      <licenses>
-      <license>
-          <name>{{this.packageJson.license}}</name>
-          <url>{{licenseUrl this.packageJson.repository.url}}</url>
-      </license>
-      </licenses>
-  </other>
-  {{/each}}
-  `
+  const templateString = fs.readFileSync(path.join(__dirname, 'template.handlebars'), 'utf8')
   Handlebars.registerHelper('licenseUrl', function (url) {
     if (!url) {
       return ''

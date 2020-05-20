@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-license-xml",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Generates a xml with the licenses of your runtime dependencies",
   "engines": {
     "node": ">=8.0.0"
@@ -10,7 +10,8 @@
   "files": [
     "index.js",
     "index.d.ts",
-    "module.js"
+    "module.js",
+    "template.handlebars"
   ],
   "scripts": {
     "build": "standard module.js && node ./node_modules/rollup/dist/bin/rollup -c",
